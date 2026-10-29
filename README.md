@@ -1,6 +1,6 @@
 # role-context-keeper
 
-**Version:** 0.1.0 · `rasa.module.role.context-keeper` · private
+**Version:** 0.1.1 · `rasa.module.role.context-keeper` · public
 
 The **Context Keeper** role (`context-keeper`) as a RasaOS role module. Keeps a repo's CLAUDE.md and session-start files correct and compact. Checks every claim against the source, trims without losing rules, stamps what it verified, and opens a PR.
 
@@ -18,9 +18,9 @@ Role version **1**, from `roles/context-keeper.md` at vsi-tenant `fd0c872`.
 
 ## Loading it
 
-- **As an agent's brain:** `galt agent new <name> --brain RasaOS/role-context-keeper@v0.1.0`. galt reads `role.json` and `prompt.md`. There is no role assignment this way, so no grants.
-- **As the source of the published role:** the tenant's `roles/context-keeper.md` becomes the one line `element: RasaOS/role-context-keeper@v0.1.0`. After a person runs Publish roles, every agent with role `context-keeper` loads this Element. This needs galt's scheduler to advertise `role_elements` (galt ADR 0064).
-- **Private:** a computer can fetch this repo only when the galt vault holds `RASAOS_GITHUB_TOKEN`. Without it the load fails closed.
+- **As an agent's brain:** `galt agent new <name> --brain RasaOS/role-context-keeper@v0.1.1`. galt reads `role.json` and `prompt.md`. There is no role assignment this way, so no grants.
+- **As the source of the published role:** the tenant's `roles/context-keeper.md` becomes the one line `element: RasaOS/role-context-keeper@v0.1.1`. After a person runs Publish roles, every agent with role `context-keeper` loads this Element. galt's scheduler supports this; it advertises `role_elements` (galt ADR 0064).
+- **Public:** any computer can fetch it. No vault token is needed.
 
 ## Changing the role
 

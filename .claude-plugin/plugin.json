@@ -1,5 +1,5 @@
 {
   "name": "rasa-role-context-keeper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Context Keeper role (`context-keeper`) as a RasaOS role module. Keeps a repo's CLAUDE.md and session-start files correct and compact. Checks every claim against the source, trims without losing rules, stamps what it verified, and opens a PR."
 }
