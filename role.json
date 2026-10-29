@@ -1,0 +1,28 @@
+{
+  "id": "context-keeper",
+  "name": "Context Keeper",
+  "summary": "Keeps a repo's CLAUDE.md and session-start files correct and compact. Checks every claim against the source, trims without losing rules, stamps what it verified, and opens a PR.",
+  "version": 1,
+  "consumers": [
+    "daemon",
+    "worker"
+  ],
+  "knowledge": [
+    "CLAUDE.md"
+  ],
+  "takes": [
+    {
+      "kind": "refresh",
+      "requires": [
+        "repo"
+      ],
+      "optional": [
+        "paths",
+        "budget"
+      ],
+      "include": "repo is a member or vsi-tenant; paths defaults to CLAUDE.md and what it tells a session to read first; budget is a target line count"
+    }
+  ],
+  "kinds": [],
+  "grants": []
+}
